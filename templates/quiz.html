@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Quiz</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+<div class="floating-shapes"></div>
+<button onclick="toggleDarkMode()">
+🌙 Dark Mode
+</button>
+
+<h1>Quiz Time</h1>
+
+<h2 id="timer">15</h2>
+
+<form action="/result" method="POST">
+
+<input type="hidden"
+name="category"
+value="{{ category }}">
+
+{% for question in questions %}
+
+<div class="card">
+
+<h2>
+Question {{ loop.index }}
+</h2>
+
+<p>
+{{ question.question }}
+</p>
+
+{% for option in question.options %}
+
+<label>
+
+<input
+type="radio"
+name="q{{ loop.index0 }}"
+value="{{ option }}">
+{{ option }}
+
+</label>
+
+<br>
+
+{% endfor %}
+
+</div>
+
+{% endfor %}
+
+<br>
+
+<button type="submit">
+Submit Quiz
+</button>
+
+</form>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

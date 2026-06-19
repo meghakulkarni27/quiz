@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎉 Quiz Completed</h1>
+
+<h2>
+Your Score:
+{{ score }}/{{ total }}
+</h2>
+
+<a href="/">
+<button>
+Try Again
+</button>
+</a>
+
+</div>
+
+</body>
+</html>

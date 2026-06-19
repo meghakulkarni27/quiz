@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fun Learning Quiz</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎯 Fun Learning Quiz</h1>
+
+    <h3>Select a Quiz Category</h3>
+
+    <div class="category-grid">
+
+        <form action="/quiz" method="GET">
+            <input type="hidden" name="category" value="python">
+
+            <button class="category-card python-card">
+                <div class="icon">🐍</div>
+                <h2>Python</h2>
+                <p>Programming Fundamentals</p>
+            </button>
+        </form>
+
+        <form action="/quiz" method="GET">
+            <input type="hidden" name="category" value="sql">
+
+            <button class="category-card sql-card">
+                <div class="icon">🗄️</div>
+                <h2>SQL</h2>
+                <p>Database Queries</p>
+            </button>
+        </form>
+
+        <form action="/quiz" method="GET">
+            <input type="hidden" name="category" value="aptitude">
+
+            <button class="category-card aptitude-card">
+                <div class="icon">🧠</div>
+                <h2>Aptitude</h2>
+                <p>Logical Thinking</p>
+            </button>
+        </form>
+
+        <form action="/quiz" method="GET">
+            <input type="hidden" name="category" value="gk">
+
+            <button class="category-card gk-card">
+                <div class="icon">🌍</div>
+                <h2>General Knowledge</h2>
+                <p>Test Your Awareness</p>
+            </button>
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
